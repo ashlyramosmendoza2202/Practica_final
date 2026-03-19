@@ -16,5 +16,23 @@ namespace Practica_Final
         {
             InitializeComponent();
         }
+
+        private void Menu_Almacen_Load(object sender, EventArgs e)
+        {
+            panelSubMenu.Visible = false;
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            panelSubMenu.Visible = !panelSubMenu.Visible;
+            {
+          
+        }
+    }
     }
 }
