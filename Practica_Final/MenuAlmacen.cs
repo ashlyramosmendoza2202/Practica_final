@@ -31,8 +31,8 @@ namespace Practica_Final
         {
             panelSubMenu.Visible = !panelSubMenu.Visible;
             {
-          
+
+            }
         }
-    }
     }
 }

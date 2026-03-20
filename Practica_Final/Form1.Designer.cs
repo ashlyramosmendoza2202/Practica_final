@@ -180,9 +180,9 @@
             // btnCerrar
             // 
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(861, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(852, 0);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(30, 30);
+            this.btnCerrar.Size = new System.Drawing.Size(44, 41);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.TabStop = false;
@@ -191,9 +191,9 @@
             // btnMinimizar
             // 
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(825, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(798, 0);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimizar.Size = new System.Drawing.Size(57, 41);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 11;
             this.btnMinimizar.TabStop = false;
@@ -229,6 +229,7 @@
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ForeColor = System.Drawing.Color.Gainsboro;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";

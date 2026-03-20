@@ -63,6 +63,16 @@ namespace Practica_Final.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_icons__6_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-icons (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WhatsApp_Image_2026_03_17_at_11_05_01_PM {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2026-03-17 at 11.05.01 PM", resourceCulture);
