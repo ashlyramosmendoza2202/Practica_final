@@ -34,5 +34,14 @@ namespace Practica_Final
 
             }
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+         
+        {
+            FrmMostrarProductos frm = new FrmMostrarProductos();
+            frm.Show();
+        }
+    }
     }
 }

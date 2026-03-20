@@ -16,5 +16,17 @@ namespace Practica_Final
         {
             InitializeComponent();
         }
+
+        private void FrmMostrarProductos_Load(object sender, EventArgs e)
+        {
+             dgvProductos.DataSource = null;
+            dgvProductos.DataSource = Datos.listaProductos;
+
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProductos.ReadOnly = true;
+            dgvProductos.AllowUserToAddRows = false;
+
+        }
     }
-}
+    }
+
