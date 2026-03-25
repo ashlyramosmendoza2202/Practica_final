@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 450);
+            this.panel1.Size = new System.Drawing.Size(250, 408);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -215,7 +215,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowText;
-            this.ClientSize = new System.Drawing.Size(895, 450);
+            this.ClientSize = new System.Drawing.Size(895, 408);
             this.Controls.Add(this.lblErrorArroba);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);

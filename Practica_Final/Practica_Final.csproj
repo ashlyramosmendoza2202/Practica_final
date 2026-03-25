@@ -66,6 +66,12 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarProducto.Designer.cs">
+      <DependentUpon>FrmAgregarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMostrarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarProducto.resx">
+      <DependentUpon>FrmAgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMostrarProductos.resx">
       <DependentUpon>FrmMostrarProductos.cs</DependentUpon>

@@ -31,17 +31,28 @@ namespace Practica_Final
         {
             panelSubMenu.Visible = !panelSubMenu.Visible;
             {
-
             }
         }
-
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-         
+      
+        private void btnMostrar_Click_1(object sender, EventArgs e)
         {
             FrmMostrarProductos frm = new FrmMostrarProductos();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void btnAgregar_Click_2(object sender, EventArgs e)
+        {
+            FrmAgregarProducto frm = new FrmAgregarProducto();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+            
+            }
+        }
     }
-    }
-}
+    
+
+
+    
