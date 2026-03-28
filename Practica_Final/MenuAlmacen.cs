@@ -48,6 +48,7 @@ namespace Practica_Final
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+            frm,
             
             }
         }
