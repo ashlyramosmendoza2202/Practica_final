@@ -19,47 +19,36 @@ namespace Practica_Final
 
         private void FrmMostrarProductos_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
-            dgvProductos.DataSource = null;
-            dgvProductos.DataSource = Datos.listaProductos;
+           
+        {
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.MediumPurple;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridView1.BackgroundColor = Color.White;
 
-            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProductos.ReadOnly = true;
-            dgvProductos.AllowUserToAddRows = false;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumPurple;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
 
-            dgvProductos.DataSource = null;
-            dgvProductos.DataSource = Datos.listaProductos;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProductos.ReadOnly = true;
-            dgvProductos.AllowUserToAddRows = false;
-
-            // 🔥 QUITAR ESTILO FEO
-            dgvProductos.EnableHeadersVisualStyles = false;
-            dgvProductos.BorderStyle = BorderStyle.None;
-            dgvProductos.RowHeadersVisible = false;
-
-            // 🎨 HEADER PRO
-            dgvProductos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 99, 255); // morado bonito
-            dgvProductos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvProductos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-            dgvProductos.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            dgvProductos.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(108, 99, 255);
-            dgvProductos.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
-
-            // 🎨 FILAS
-            dgvProductos.DefaultCellStyle.BackColor = Color.White;
-            dgvProductos.DefaultCellStyle.ForeColor = Color.Black;
-            dgvProductos.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-
-            dgvProductos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 255);
-
-            // ✨ SELECCIÓN
-            dgvProductos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(108, 99, 255);
-            dgvProductos.DefaultCellStyle.SelectionForeColor = Color.White;
-
-            dgvProductos.GridColor = Color.LightGray;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowTemplate.Height = 30;
         }
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = Datos.listaProductos;
+
+            {
+      
+        }
+    }
     }
 }
