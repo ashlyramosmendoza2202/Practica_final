@@ -40,6 +40,10 @@ namespace Practica_Final
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+
+            FrmMostrarProductos form = new FrmMostrarProductos();
+            frm.Show();
+            frm.ActualizarTabla();
         }
 
         private void btnAgregar_Click_2(object sender, EventArgs e)
