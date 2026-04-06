@@ -261,7 +261,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuText;
-            this.ClientSize = new System.Drawing.Size(800, 382);
+            this.ClientSize = new System.Drawing.Size(1028, 594);
             this.Controls.Add(this.txtCantidadMinima);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -282,7 +282,9 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtPrecioPorUnidad);
             this.Controls.Add(this.txtld);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmAgregarProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Productos";
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
             this.ResumeLayout(false);

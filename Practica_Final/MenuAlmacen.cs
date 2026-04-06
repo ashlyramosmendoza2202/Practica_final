@@ -22,7 +22,7 @@ namespace Practica_Final
             panelSubMenu.Visible = false;
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
 
         }
@@ -33,7 +33,7 @@ namespace Practica_Final
             {
             }
         }
-      
+
         private void btnMostrar_Click_1(object sender, EventArgs e)
         {
             FrmMostrarProductos frm = new FrmMostrarProductos();
@@ -52,11 +52,21 @@ namespace Practica_Final
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
-            
-            
-            }
+
+
+        }
+
+        private void btnActualizar_Click_1(object sender, EventArgs e)
+        {
+            FrmActualizarProducto frm = new FrmActualizarProducto();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
+}
+
+        
     
 
 
