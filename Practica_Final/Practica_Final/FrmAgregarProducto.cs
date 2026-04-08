@@ -45,10 +45,12 @@ namespace Practica_Final
             else if (p.Necesidad == "Segunda") p.ITBIS = p.PrecioPorUnidad * 0.14m;
             else p.ITBIS = p.PrecioPorUnidad * 0.18m;
 
-            // ESTADO CALCULADO
-            int CantidadMinima;
+                p.PrecioFinal = p.PrecioPorUnidad + p.ITBIS;
+
+                // ESTADO CALCULADO
+                int CantidadMinima;
             int.TryParse(txtCantidadMinima.Text, out min);
-            if (p.Cantidad == 0) p.Estado = "Sin existencia";
+            if (p.Cantidad == 0) p.Estado = "Agotado s";
             else if (p.Cantidad <= min) p.Estado = "Próximo a terminar";
             else p.Estado = "Disponible";
 

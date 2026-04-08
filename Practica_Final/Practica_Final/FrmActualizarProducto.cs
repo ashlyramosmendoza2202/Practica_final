@@ -19,24 +19,6 @@ namespace Practica_Final
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            // Cuando el usuario hace clic para escribir
-
-            {
-                if (txtBusqueda.Text == "Ingrese ID o Nombre...")
-                {
-                    txtBusqueda.Text = ""; // Borramos el texto sugerido
-                    txtBusqueda.ForeColor = Color.Black; // Ponemos el texto en negro para escribir
-                }
-            }
-        }
-
 
         // Cuando el usuario sale del cuadro sin escribir nada
         private void txtBusqueda_Leave(object sender, EventArgs e)
@@ -48,14 +30,13 @@ namespace Practica_Final
             }
         }
 
-        private void FrmActualizarProducto_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtBusqueda.Text == "Ingrese ID o nombre..")
+            {
+                txtBusqueda.Text = "";
+                txtBusqueda.ForeColor = Color.Black;
+            }
             {
 
                 var p = Datos.listaProductos.FirstOrDefault(x => x.Id.ToString() == txtBusqueda.Text ||
@@ -73,6 +54,11 @@ namespace Practica_Final
                     cmbNecesidad.Text = p.Necesidad;
                     txtITBIS.Text = p.ITBIS.ToString();
                     txtEstado.Text = p.Estado;
+
+
+                    {
+
+                    }
                 }
             }
         }
@@ -124,8 +110,18 @@ namespace Practica_Final
                 }
             }
         }
+
+        private void txtBusqueda_Enter(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text == "Ingrese ID o nombre...")
+            {
+                txtBusqueda.Text = "";
+                txtBusqueda.ForeColor = Color.Black;
+            }
+        }
     }
 }
+
         
     
 

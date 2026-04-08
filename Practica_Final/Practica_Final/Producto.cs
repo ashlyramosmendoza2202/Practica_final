@@ -9,4 +9,5 @@
     public decimal ITBIS { get; set; }
     public int CantidadMinima { get; set; }
     public string Estado { get; set; }
+    public decimal PrecioFinal { get; set; }
 }

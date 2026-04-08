@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmActualizarProducto));
             this.label1 = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,7 +70,7 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 3);
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Orchid;
             this.label1.Location = new System.Drawing.Point(-3, 87);
             this.label1.Name = "label1";
@@ -77,7 +78,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ACTUALIZAR DETALLES DE PRODUCTO.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtBusqueda
             // 
@@ -88,7 +88,7 @@
             this.txtBusqueda.TabIndex = 2;
             this.txtBusqueda.Text = "Ingrese ID o nombre...";
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            this.txtBusqueda.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.txtBusqueda.Enter += new System.EventHandler(this.txtBusqueda_Enter);
             // 
             // label2
             // 
@@ -100,7 +100,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(357, 40);
             this.label2.TabIndex = 0;
-            this.label2.Text = "BUSCAR PRODUCTO O NOMBRE O ID (PARA ACTUALIZAR):";
+            this.label2.Text = "BUSCAR NOMBRE DEL PRODUCTO O ID:";
             // 
             // panel1
             // 
@@ -341,9 +341,10 @@
             // 
             // btnActualizar
             // 
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.Location = new System.Drawing.Point(-3, 452);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(258, 48);
+            this.btnActualizar.Size = new System.Drawing.Size(258, 55);
             this.btnActualizar.TabIndex = 4;
             this.btnActualizar.Text = "ACTUALIZAR PRODUCTO.";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -351,9 +352,10 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.Location = new System.Drawing.Point(360, 452);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(246, 48);
+            this.btnEliminar.Size = new System.Drawing.Size(246, 55);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "ELIMINAR PRODUCTO.";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -361,6 +363,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 363F));
@@ -399,7 +402,6 @@
             this.Name = "FrmActualizarProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmActualizarProducto";
-            this.Load += new System.EventHandler(this.FrmActualizarProducto_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);

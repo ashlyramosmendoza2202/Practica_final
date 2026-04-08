@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarProducto));
             this.txtld = new System.Windows.Forms.MaskedTextBox();
             this.txtPrecioPorUnidad = new System.Windows.Forms.MaskedTextBox();
             this.txtCantidadMinima = new System.Windows.Forms.MaskedTextBox();
@@ -119,9 +120,10 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.Violet;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.Location = new System.Drawing.Point(567, 290);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(225, 72);
+            this.btnGuardar.Size = new System.Drawing.Size(225, 69);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;

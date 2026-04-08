@@ -76,18 +76,10 @@ namespace Practica_Final
             frm.Show();
 
         }
-
-        private void panelSubMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
+
+
 
         
     
