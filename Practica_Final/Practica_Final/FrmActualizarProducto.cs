@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Practica_Final
 {
@@ -35,7 +36,7 @@ namespace Practica_Final
                 }
             }
         }
-    
+
 
         // Cuando el usuario sale del cuadro sin escribir nada
         private void txtBusqueda_Leave(object sender, EventArgs e)
@@ -51,6 +52,89 @@ namespace Practica_Final
         {
 
         }
-    }
-    }
 
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+            {
+
+                var p = Datos.listaProductos.FirstOrDefault(x => x.Id.ToString() == txtBusqueda.Text ||
+                 x.Nombre.ToLower().Contains(txtBusqueda.Text.ToLower()));
+
+                if (p != null)
+                {
+
+                    txtID.Text = p.Id.ToString();
+                    txtNombre.Text = p.Nombre;
+                    cmbCategoria.Text = p.Categoria;
+                    numCantidad.Value = p.Cantidad;
+                    txtPrecio.Text = p.PrecioPorUnidad.ToString();
+                    txtMinima.Text = p.CantidadMinima.ToString();
+                    cmbNecesidad.Text = p.Necesidad;
+                    txtITBIS.Text = p.ITBIS.ToString();
+                    txtEstado.Text = p.Estado;
+                }
+            }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+            {
+                // Buscamos el producto por el ID que está en el cuadro txtID
+                var p = Datos.listaProductos.FirstOrDefault(x => x.Id.ToString() == txtID.Text);
+
+                if (p != null)
+                {
+                    // Actualizamos los datos en la lista
+                    p.Nombre = txtNombre.Text;
+                    p.Categoria = cmbCategoria.Text;
+                    p.Cantidad = (int)numCantidad.Value;
+                    p.PrecioPorUnidad = decimal.Parse(txtPrecio.Text);
+                    p.CantidadMinima = int.Parse(txtMinima.Text);
+                    p.Necesidad = cmbNecesidad.Text;
+
+                    // Aquí puedes copiar tu lógica de ITBIS de 'Agregar' para que se recalcule
+
+                    MessageBox.Show("¡Producto actualizado! Cierra esta ventana y dale a 'Mostrar' en la tabla.");
+                    this.Close();
+                }
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            // Buscamos el producto
+            var p = Datos.listaProductos.FirstOrDefault(x => x.Id.ToString() == txtID.Text);
+
+            if (p != null)
+            {
+                // 1. Lo borramos de la lista
+                Datos.listaProductos.Remove(p);
+
+                MessageBox.Show("Producto eliminado correctamente.");
+
+                // 2. IMPORTANTE: Antes de cerrar, 'limpiamos' el foco
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+                {
+
+
+                }
+            }
+        }
+    }
+}
+        
+    
+
+           
+        
+
+
+
+
+
+
+           

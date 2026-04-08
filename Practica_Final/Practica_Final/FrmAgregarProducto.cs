@@ -17,11 +17,10 @@ namespace Practica_Final
             InitializeComponent();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
-        {
-
-            {
          
         {
+            { 
+
             Producto p = new Producto();
             p.Id = Datos.listaProductos.Count + 1;
             p.Nombre = txtNombre.Text;
@@ -61,7 +60,7 @@ namespace Practica_Final
     }
         }
     }
-}
+
 
     
 

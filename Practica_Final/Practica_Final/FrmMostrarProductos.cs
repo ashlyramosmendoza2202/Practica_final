@@ -55,24 +55,44 @@ namespace Practica_Final
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = 
-            Datos.listaProductos;
+
+            {
+                try
+                {
+                    // Limpiamos cualquier selección previa para evitar errores de índice
+                    dataGridView1.CurrentCell = null;
+                    dataGridView1.DataSource = null;
+
+                    // Volvemos a cargar la lista actualizada
+                    if (Datos.listaProductos != null)
+                    {
+                        dataGridView1.DataSource = Datos.listaProductos;
+                    }
+                }
+                catch (Exception)
+                {
+                    // Si ocurre un error de dibujo, lo ignoramos para que no salga el cuadro feo
+                }
+            }
+        }
+        
+       
+        
 
             
-            {
+            
       
-        }
-    }
+        
+    
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
            
         {
-            // 1. Verificar si hay una fila seleccionada
+            
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // 2. Preguntar al usuario para estar seguros (Buena práctica)
+           
                 DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este producto?",
                     "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -134,14 +154,14 @@ namespace Practica_Final
         }
     }
 
-        private void panelHeader_Paint(object sender, PaintEventArgs e)
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-
+            e.ThrowException = false;
         }
-
-        private void panelBotones_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
+           
+           
     }
-}
+    }
+
