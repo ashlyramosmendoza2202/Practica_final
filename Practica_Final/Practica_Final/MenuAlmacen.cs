@@ -92,8 +92,21 @@ namespace Practica_Final
 
             }
         }
+
+        private void FrmAsistenteGlamy_Click(object sender, EventArgs e)
+       
+        {
+            // Creamos la instancia del asistente
+            FrmAsistenteGlamy asistente = new FrmAsistenteGlamy();
+
+            // IMPORTANTE: Usa .Show() en lugar de .ShowDialog()
+            // .Show() permite que la ventana sea independiente y puedas moverla 
+            // mientras sigues usando el menú de atrás.
+            asistente.Show();
+        }
     }
-}
+    }
+
 
 
 

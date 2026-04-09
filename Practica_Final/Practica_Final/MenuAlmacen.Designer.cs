@@ -38,9 +38,11 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FrmAsistenteGlamy = new System.Windows.Forms.Button();
             this.panelSubMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panelSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -58,6 +60,7 @@
             this.imageList1.Images.SetKeyName(8, "carpeta.png");
             this.imageList1.Images.SetKeyName(9, "exportar.png");
             this.imageList1.Images.SetKeyName(10, "cerrar-sesion.png");
+            this.imageList1.Images.SetKeyName(11, "robot.png");
             // 
             // btnMenu
             // 
@@ -192,7 +195,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnMostrar, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnMenu, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.FrmAsistenteGlamy, 0, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -208,34 +211,45 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(198, 923);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // button1
+            // FrmAsistenteGlamy
             // 
-            this.button1.BackColor = System.Drawing.Color.Thistle;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orchid;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Italic);
-            this.button1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.ImageIndex = 9;
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(0, 325);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 57);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Exportar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.FrmAsistenteGlamy.BackColor = System.Drawing.Color.Thistle;
+            this.FrmAsistenteGlamy.FlatAppearance.BorderSize = 0;
+            this.FrmAsistenteGlamy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.FrmAsistenteGlamy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orchid;
+            this.FrmAsistenteGlamy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FrmAsistenteGlamy.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Italic);
+            this.FrmAsistenteGlamy.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.FrmAsistenteGlamy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FrmAsistenteGlamy.ImageIndex = 11;
+            this.FrmAsistenteGlamy.ImageList = this.imageList1;
+            this.FrmAsistenteGlamy.Location = new System.Drawing.Point(0, 325);
+            this.FrmAsistenteGlamy.Margin = new System.Windows.Forms.Padding(0);
+            this.FrmAsistenteGlamy.Name = "FrmAsistenteGlamy";
+            this.FrmAsistenteGlamy.Size = new System.Drawing.Size(194, 57);
+            this.FrmAsistenteGlamy.TabIndex = 7;
+            this.FrmAsistenteGlamy.Text = "Asistente Glamy";
+            this.FrmAsistenteGlamy.UseVisualStyleBackColor = false;
+            this.FrmAsistenteGlamy.Click += new System.EventHandler(this.FrmAsistenteGlamy_Click);
             // 
             // panelSubMenu
             // 
             this.panelSubMenu.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelSubMenu.Controls.Add(this.linkLabel1);
             this.panelSubMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSubMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSubMenu.Name = "panelSubMenu";
             this.panelSubMenu.Size = new System.Drawing.Size(1668, 923);
             this.panelSubMenu.TabIndex = 1;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Location = new System.Drawing.Point(3, 0);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(80, 20);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "linkLabel1";
             // 
             // Menu_Almacen
             // 
@@ -251,6 +265,7 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.Menu_Almacen_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panelSubMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -265,6 +280,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel panelSubMenu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button FrmAsistenteGlamy;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
