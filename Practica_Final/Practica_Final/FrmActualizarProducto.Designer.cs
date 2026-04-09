@@ -131,6 +131,22 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "ABARROTES.",
+            "LÁCTEOS.",
+            "BEBIDAS.",
+            "FRUTAS.",
+            "CARNES.",
+            "VEGETALES.",
+            "LIMPIEZA.",
+            "HIGIENE.",
+            "HOGAR.",
+            "BEBE",
+            "ELECTRÓNICA.",
+            "FERRETERÍA.",
+            "PAPELERÍA.",
+            "MEDICINAS.",
+            "OTROS..."});
             this.cmbCategoria.Location = new System.Drawing.Point(8, 208);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(186, 28);
@@ -155,9 +171,10 @@
             // 
             // txtID
             // 
+            this.txtID.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(8, 80);
             this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(193, 26);
             this.txtID.TabIndex = 2;
             // 
@@ -176,7 +193,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label3.Location = new System.Drawing.Point(64, 9);
+            this.label3.Location = new System.Drawing.Point(51, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(194, 18);
             this.label3.TabIndex = 0;
@@ -214,6 +231,7 @@
             this.txtMinima.Name = "txtMinima";
             this.txtMinima.Size = new System.Drawing.Size(190, 26);
             this.txtMinima.TabIndex = 8;
+            this.txtMinima.TextChanged += new System.EventHandler(this.txtMinima_TextChanged);
             // 
             // numCantidad
             // 
@@ -221,6 +239,7 @@
             this.numCantidad.Name = "numCantidad";
             this.numCantidad.Size = new System.Drawing.Size(183, 26);
             this.numCantidad.TabIndex = 7;
+            this.numCantidad.ValueChanged += new System.EventHandler(this.numCantidad_ValueChanged);
             // 
             // label8
             // 
@@ -248,13 +267,14 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(190, 26);
             this.txtPrecio.TabIndex = 3;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label10.Location = new System.Drawing.Point(51, 0);
+            this.label10.Location = new System.Drawing.Point(61, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(195, 18);
             this.label10.TabIndex = 0;
@@ -262,18 +282,26 @@
             // 
             // txtEstado
             // 
+            this.txtEstado.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(12, 208);
             this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ReadOnly = true;
             this.txtEstado.Size = new System.Drawing.Size(190, 26);
             this.txtEstado.TabIndex = 8;
             // 
             // cmbNecesidad
             // 
             this.cmbNecesidad.FormattingEnabled = true;
+            this.cmbNecesidad.Items.AddRange(new object[] {
+            "Primera",
+            "Segunda",
+            "Tercera"});
             this.cmbNecesidad.Location = new System.Drawing.Point(7, 78);
             this.cmbNecesidad.Name = "cmbNecesidad";
             this.cmbNecesidad.Size = new System.Drawing.Size(186, 28);
             this.cmbNecesidad.TabIndex = 7;
+            this.cmbNecesidad.SelectedIndexChanged += new System.EventHandler(this.cmbNecesidad_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -297,8 +325,11 @@
             // 
             // txtITBIS
             // 
+            this.txtITBIS.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtITBIS.Enabled = false;
             this.txtITBIS.Location = new System.Drawing.Point(12, 135);
             this.txtITBIS.Name = "txtITBIS";
+            this.txtITBIS.ReadOnly = true;
             this.txtITBIS.Size = new System.Drawing.Size(190, 26);
             this.txtITBIS.TabIndex = 3;
             // 
@@ -317,7 +348,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label14.Location = new System.Drawing.Point(59, 9);
+            this.label14.Location = new System.Drawing.Point(64, 9);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(209, 18);
             this.label14.TabIndex = 0;
@@ -355,7 +386,7 @@
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.Location = new System.Drawing.Point(360, 452);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(246, 55);
+            this.btnEliminar.Size = new System.Drawing.Size(256, 55);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "ELIMINAR PRODUCTO.";
             this.btnEliminar.UseVisualStyleBackColor = true;

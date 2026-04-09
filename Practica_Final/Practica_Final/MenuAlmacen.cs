@@ -76,8 +76,25 @@ namespace Practica_Final
             frm.Show();
 
         }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<FrmExportarProductos>().Any())
+            {
+                Application.OpenForms.OfType<FrmExportarProductos>().First().BringToFront();
+                return;
+            }
+            FrmExportarProductos frm = new FrmExportarProductos();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+            {
+
+            }
+        }
     }
 }
+
 
 
 

@@ -38,8 +38,8 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelSubMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.panelSubMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,6 +160,7 @@
             this.btnExportar.TabIndex = 5;
             this.btnExportar.Text = "Exportar";
             this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnSalir
             // 
@@ -207,15 +208,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(198, 923);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // panelSubMenu
-            // 
-            this.panelSubMenu.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panelSubMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSubMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelSubMenu.Name = "panelSubMenu";
-            this.panelSubMenu.Size = new System.Drawing.Size(1668, 923);
-            this.panelSubMenu.TabIndex = 1;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Thistle;
@@ -235,6 +227,15 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Exportar";
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panelSubMenu
+            // 
+            this.panelSubMenu.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelSubMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSubMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelSubMenu.Name = "panelSubMenu";
+            this.panelSubMenu.Size = new System.Drawing.Size(1668, 923);
+            this.panelSubMenu.TabIndex = 1;
             // 
             // Menu_Almacen
             // 

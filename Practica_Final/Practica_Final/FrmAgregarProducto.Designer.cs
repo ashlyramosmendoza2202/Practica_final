@@ -58,7 +58,9 @@
             // 
             // txtld
             // 
+            this.txtld.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtld.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtld.Enabled = false;
             this.txtld.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtld.Location = new System.Drawing.Point(252, 85);
             this.txtld.Mask = "`";
@@ -77,7 +79,7 @@
             // 
             // txtCantidadMinima
             // 
-            this.txtCantidadMinima.Location = new System.Drawing.Point(656, 87);
+            this.txtCantidadMinima.Location = new System.Drawing.Point(671, 87);
             this.txtCantidadMinima.Name = "txtCantidadMinima";
             this.txtCantidadMinima.Size = new System.Drawing.Size(150, 26);
             this.txtCantidadMinima.TabIndex = 2;
@@ -92,16 +94,27 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownWidth = 250;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Items.AddRange(new object[] {
-            "Alimentos",
-            "Bebidas",
-            "Limpieza",
-            "Higiene",
-            "Electronica"});
+            "ABARROTES.",
+            "LÁCTEOS.",
+            "BEBIDAS.",
+            "FRUTAS.",
+            "CARNES.",
+            "VEGETALES.",
+            "LIMPIEZA.",
+            "HIGIENE.",
+            "HOGAR.",
+            "BEBE",
+            "ELECTRÓNICA.",
+            "FERRETERÍA.",
+            "PAPELERÍA.",
+            "MEDICINAS.",
+            "OTROS..."});
             this.cmbCategoria.Location = new System.Drawing.Point(261, 174);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(166, 28);
+            this.cmbCategoria.Size = new System.Drawing.Size(180, 28);
             this.cmbCategoria.TabIndex = 5;
             // 
             // cmbNecesidad
@@ -227,14 +240,18 @@
             // 
             // txtEstado
             // 
-            this.txtEstado.Location = new System.Drawing.Point(656, 188);
+            this.txtEstado.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Location = new System.Drawing.Point(671, 188);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(150, 26);
             this.txtEstado.TabIndex = 19;
             // 
             // txtITBIS
             // 
-            this.txtITBIS.Location = new System.Drawing.Point(656, 139);
+            this.txtITBIS.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtITBIS.Enabled = false;
+            this.txtITBIS.Location = new System.Drawing.Point(671, 139);
             this.txtITBIS.Name = "txtITBIS";
             this.txtITBIS.Size = new System.Drawing.Size(150, 26);
             this.txtITBIS.TabIndex = 20;

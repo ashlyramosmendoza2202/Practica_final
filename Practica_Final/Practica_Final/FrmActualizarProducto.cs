@@ -32,34 +32,34 @@ namespace Practica_Final
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
-            if (txtBusqueda.Text == "Ingrese ID o nombre..")
+            // Si el cuadro está vacío, no busques nada y LIMPIA el nombre.
+            if (string.IsNullOrEmpty(txtBusqueda.Text))
+            {
+                txtNombre.Text = "";
+                return;
+            }
+
+            // Elimina el código inaccesible y usa la lista correcta
+            if (txtBusqueda.Text == "Ingrese ID o nombre...")
             {
                 txtBusqueda.Text = "";
                 txtBusqueda.ForeColor = Color.Black;
             }
-            {
 
-                var p = Datos.listaProductos.FirstOrDefault(x => x.Id.ToString() == txtBusqueda.Text ||
+            var p = Datos.listaProductos.FirstOrDefault(x => x.Id.ToString() == txtBusqueda.Text ||
                  x.Nombre.ToLower().Contains(txtBusqueda.Text.ToLower()));
 
-                if (p != null)
-                {
-
-                    txtID.Text = p.Id.ToString();
-                    txtNombre.Text = p.Nombre;
-                    cmbCategoria.Text = p.Categoria;
-                    numCantidad.Value = p.Cantidad;
-                    txtPrecio.Text = p.PrecioPorUnidad.ToString();
-                    txtMinima.Text = p.CantidadMinima.ToString();
-                    cmbNecesidad.Text = p.Necesidad;
-                    txtITBIS.Text = p.ITBIS.ToString();
-                    txtEstado.Text = p.Estado;
-
-
-                    {
-
-                    }
-                }
+            if (p != null)
+            {
+                txtID.Text = p.Id.ToString();
+                txtNombre.Text = p.Nombre;
+                cmbCategoria.Text = p.Categoria;
+                numCantidad.Value = p.Cantidad;
+                txtPrecio.Text = p.PrecioPorUnidad.ToString();
+                txtMinima.Text = p.CantidadMinima.ToString();
+                cmbNecesidad.Text = p.Necesidad;
+                txtITBIS.Text = p.ITBIS.ToString();
+                txtEstado.Text = p.Estado;
             }
         }
 
@@ -119,13 +119,108 @@ namespace Practica_Final
                 txtBusqueda.ForeColor = Color.Black;
             }
         }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+            if (decimal.TryParse(txtPrecio.Text, out decimal precio) &&
+                int.TryParse(numCantidad.Text, out int cant) &&
+                int.TryParse(txtMinima.Text, out int min))
+            {
+
+                decimal porcentaje = 0;
+                if (cmbNecesidad.Text == "Primera") porcentaje = 0.08m;
+                else if (cmbNecesidad.Text == "Segunda") porcentaje = 0.14m;
+                else if (cmbNecesidad.Text == "Tercera") porcentaje = 0.18m;
+
+                decimal elItbis = precio * porcentaje;
+                txtITBIS.Text = elItbis.ToString("N2");
+
+
+                if (cant == 0) txtEstado.Text = "Sin existencia";
+                else if (cant <= min) txtEstado.Text = "Próximo a terminar";
+                else txtEstado.Text = "Disponible";
+            }
+        }
+
+        private void txtMinima_TextChanged(object sender, EventArgs e)
+        {
+
+            if (decimal.TryParse(txtPrecio.Text, out decimal precio) &&
+                int.TryParse(numCantidad.Text, out int cant) &&
+                int.TryParse(txtMinima.Text, out int min))
+            {
+
+                decimal porcentaje = 0;
+                if (cmbNecesidad.Text == "Primera") porcentaje = 0.08m;
+                else if (cmbNecesidad.Text == "Segunda") porcentaje = 0.14m;
+                else if (cmbNecesidad.Text == "Tercera") porcentaje = 0.18m;
+
+                decimal elItbis = precio * porcentaje;
+                txtITBIS.Text = elItbis.ToString("N2");
+
+                if (cant == 0) txtEstado.Text = "Sin existencia";
+                else if (cant <= min) txtEstado.Text = "Próximo a terminar";
+                else txtEstado.Text = "Disponible";
+            }
+        }
+
+        private void numCantidad_ValueChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtPrecio.Text, out decimal precio) &&
+                int.TryParse(numCantidad.Text, out int cant) &&
+                int.TryParse(txtMinima.Text, out int min))
+            {
+
+                decimal porcentaje = 0;
+                if (cmbNecesidad.Text == "Primera") porcentaje = 0.08m;
+                else if (cmbNecesidad.Text == "Segunda") porcentaje = 0.14m;
+                else if (cmbNecesidad.Text == "Tercera") porcentaje = 0.18m;
+
+                decimal elItbis = precio * porcentaje;
+                txtITBIS.Text = elItbis.ToString("N2");
+
+                if (cant == 0) txtEstado.Text = "Sin existencia";
+                else if (cant <= min) txtEstado.Text = "Próximo a terminar";
+                else txtEstado.Text = "Disponible";
+            }
+        }
+
+        private void cmbNecesidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtPrecio.Text, out decimal precio) &&
+               int.TryParse(numCantidad.Text, out int cant) &&
+               int.TryParse(txtMinima.Text, out int min))
+            {
+
+                decimal porcentaje = 0;
+                if (cmbNecesidad.Text == "Primera") porcentaje = 0.08m;
+                else if (cmbNecesidad.Text == "Segunda") porcentaje = 0.14m;
+                else if (cmbNecesidad.Text == "Tercera") porcentaje = 0.18m;
+
+                decimal elItbis = precio * porcentaje;
+                txtITBIS.Text = elItbis.ToString("N2");
+
+                if (cant == 0) txtEstado.Text = "Sin existencia";
+                else if (cant <= min) txtEstado.Text = "Próximo a terminar";
+                else txtEstado.Text = "Disponible";
+            }
+        }
     }
 }
+
+
 
         
     
 
-           
+
+        
+    
+        
+        
+    
+
         
 
 
@@ -133,4 +228,5 @@ namespace Practica_Final
 
 
 
-           
+
+

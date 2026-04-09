@@ -20,14 +20,24 @@ namespace Practica_Final
          
         {
             { 
+             
+                if (string.IsNullOrWhiteSpace(txtld.Text) ||
+                    string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                    cmbCategoria.SelectedIndex == -1 ||
+                    cmbNecesidad.SelectedIndex == -1 ||
+                    string.IsNullOrWhiteSpace(txtPrecioPorUnidad.Text))
+                {
+                    MessageBox.Show("¡Alto ahí! Debes completar todos los campos obligatorios antes de guardar.",
+                                    "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; 
+                }
 
-            Producto p = new Producto();
+            
+                Producto p = new Producto();
             p.Id = Datos.listaProductos.Count + 1;
             p.Nombre = txtNombre.Text;
             p.Categoria = cmbCategoria.Text;
             p.Necesidad = cmbNecesidad.Text;
-
-            // Convertir cantidad (asumiendo que es un NumericUpDown)
             p.Cantidad = (int)numCantidad.Value;
             int min;
                     if (int.TryParse(txtCantidadMinima.Text, out min))
@@ -48,9 +58,9 @@ namespace Practica_Final
                 p.PrecioFinal = p.PrecioPorUnidad + p.ITBIS;
 
                 // ESTADO CALCULADO
-                int CantidadMinima;
+               int CantidadMinima;
             int.TryParse(txtCantidadMinima.Text, out min);
-            if (p.Cantidad == 0) p.Estado = "Agotado s";
+            if (p.Cantidad == 0) p.Estado = "Agotado";
             else if (p.Cantidad <= min) p.Estado = "Próximo a terminar";
             else p.Estado = "Disponible";
 

@@ -59,11 +59,8 @@ namespace Practica_Final
             {
                 try
                 {
-                    // Limpiamos cualquier selección previa para evitar errores de índice
                     dataGridView1.CurrentCell = null;
                     dataGridView1.DataSource = null;
-
-                    // Volvemos a cargar la lista actualizada
                     if (Datos.listaProductos != null)
                     {
                         dataGridView1.DataSource = Datos.listaProductos;
@@ -71,28 +68,17 @@ namespace Practica_Final
                 }
                 catch (Exception)
                 {
-                    // Si ocurre un error de dibujo, lo ignoramos para que no salga el cuadro feo
+                   
                 }
             }
         }
-        
        
-        
-
-            
-            
-      
-        
-    
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-           
-        {
-            
             if (dataGridView1.SelectedRows.Count > 0)
             {
-           
+
                 DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este producto?",
                     "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -112,6 +98,9 @@ namespace Practica_Final
                         // 5. REFRESCAR LA TABLA (Igual que cuando agregas)
                         dataGridView1.DataSource = null;
                         dataGridView1.DataSource = Datos.listaProductos;
+                        {
+            
+            
                     }
                 }
             }
