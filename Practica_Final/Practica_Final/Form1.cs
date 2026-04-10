@@ -150,8 +150,22 @@ namespace Practica_Final
         }
     }
         }
-    }
-    }
+
+        private void btnSobreNosotros_Click(object sender, EventArgs e)
+        {
+        
+        
+            FrmSobreNosotros popUp = new FrmSobreNosotros();
+            popUp.StartPosition = FormStartPosition.CenterParent;
+            popUp.ShowDialog(this);
+        }
+        
+      
+        }
+        
+           
+        }
+  
         
 
 

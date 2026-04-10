@@ -43,6 +43,7 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.lblErrorArroba = new System.Windows.Forms.Label();
+            this.btnSobreNosotros = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -58,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 381);
+            this.panel1.Size = new System.Drawing.Size(250, 493);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -136,7 +137,7 @@
             this.btnAcceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcceder.ForeColor = System.Drawing.Color.White;
-            this.btnAcceder.Location = new System.Drawing.Point(337, 253);
+            this.btnAcceder.Location = new System.Drawing.Point(374, 240);
             this.btnAcceder.Name = "btnAcceder";
             this.btnAcceder.Size = new System.Drawing.Size(424, 40);
             this.btnAcceder.TabIndex = 3;
@@ -149,7 +150,7 @@
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.MediumPurple;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.linkLabel1.Location = new System.Drawing.Point(438, 330);
+            this.linkLabel1.Location = new System.Drawing.Point(471, 326);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(218, 20);
             this.linkLabel1.TabIndex = 7;
@@ -180,7 +181,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(852, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(973, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(44, 41);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,7 +192,7 @@
             // btnMinimizar
             // 
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(798, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(919, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(57, 41);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -210,12 +211,25 @@
             this.lblErrorArroba.Text = "\"Debe agregar su usuario con arroba\".";
             this.lblErrorArroba.Visible = false;
             // 
+            // btnSobreNosotros
+            // 
+            this.btnSobreNosotros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSobreNosotros.ForeColor = System.Drawing.Color.Black;
+            this.btnSobreNosotros.Location = new System.Drawing.Point(475, 380);
+            this.btnSobreNosotros.Name = "btnSobreNosotros";
+            this.btnSobreNosotros.Size = new System.Drawing.Size(196, 34);
+            this.btnSobreNosotros.TabIndex = 13;
+            this.btnSobreNosotros.Text = "SOBRE NOSOTROS";
+            this.btnSobreNosotros.UseVisualStyleBackColor = false;
+            this.btnSobreNosotros.Click += new System.EventHandler(this.btnSobreNosotros_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowText;
-            this.ClientSize = new System.Drawing.Size(895, 381);
+            this.ClientSize = new System.Drawing.Size(1018, 493);
+            this.Controls.Add(this.btnSobreNosotros);
             this.Controls.Add(this.lblErrorArroba);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
@@ -263,6 +277,7 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.Label lblErrorArroba;
+        private System.Windows.Forms.Button btnSobreNosotros;
     }
 }
 

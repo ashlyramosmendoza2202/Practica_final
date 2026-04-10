@@ -16,7 +16,7 @@ namespace Practica_Final
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu_Almacen());
+            Application.Run(new Form1 ());
         }
     }
 }
