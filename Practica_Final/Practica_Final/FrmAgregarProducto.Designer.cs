@@ -49,8 +49,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -72,9 +72,9 @@
             // txtPrecioPorUnidad
             // 
             this.txtPrecioPorUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioPorUnidad.Location = new System.Drawing.Point(261, 335);
+            this.txtPrecioPorUnidad.Location = new System.Drawing.Point(275, 331);
             this.txtPrecioPorUnidad.Name = "txtPrecioPorUnidad";
-            this.txtPrecioPorUnidad.Size = new System.Drawing.Size(126, 30);
+            this.txtPrecioPorUnidad.Size = new System.Drawing.Size(138, 30);
             this.txtPrecioPorUnidad.TabIndex = 1;
             // 
             // txtCantidadMinima
@@ -116,7 +116,6 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(180, 28);
             this.cmbCategoria.TabIndex = 5;
-           
             // 
             // cmbNecesidad
             // 
@@ -201,7 +200,7 @@
             this.numCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numCantidad.Location = new System.Drawing.Point(261, 278);
             this.numCantidad.Name = "numCantidad";
-            this.numCantidad.Size = new System.Drawing.Size(102, 28);
+            this.numCantidad.Size = new System.Drawing.Size(143, 28);
             this.numCantidad.TabIndex = 16;
             // 
             // label7
@@ -209,11 +208,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(62, 331);
+            this.label7.Location = new System.Drawing.Point(10, 331);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(185, 28);
+            this.label7.Size = new System.Drawing.Size(245, 28);
             this.label7.TabIndex = 17;
-            this.label7.Text = "Precio por unidad";
+            this.label7.Text = "Precio por unidad (RD$)";
             // 
             // label8
             // 
@@ -295,6 +294,19 @@
             this.panel1.Size = new System.Drawing.Size(856, 407);
             this.panel1.TabIndex = 23;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.Violet;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(567, 290);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(225, 69);
+            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -312,19 +324,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1425, 803);
             this.tableLayoutPanel1.TabIndex = 24;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Violet;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Symbol", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(567, 290);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(225, 69);
-            this.btnGuardar.TabIndex = 7;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmAgregarProducto
             // 

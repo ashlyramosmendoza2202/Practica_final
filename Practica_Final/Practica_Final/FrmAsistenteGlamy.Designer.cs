@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAsistenteGlamy));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnPreguntar = new System.Windows.Forms.Button();
+            this.btnEnviar = new System.Windows.Forms.Button();
             this.txtPregunta = new System.Windows.Forms.MaskedTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtRespuesta = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -44,14 +44,14 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.btnLimpiar);
-            this.panel1.Controls.Add(this.btnPreguntar);
+            this.panel1.Controls.Add(this.btnEnviar);
             this.panel1.Controls.Add(this.txtPregunta);
-            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.txtRespuesta);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(52, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(478, 401);
+            this.panel1.Size = new System.Drawing.Size(478, 633);
             this.panel1.TabIndex = 0;
             // 
             // btnLimpiar
@@ -65,16 +65,16 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // btnPreguntar
+            // btnEnviar
             // 
-            this.btnPreguntar.Image = ((System.Drawing.Image)(resources.GetObject("btnPreguntar.Image")));
-            this.btnPreguntar.Location = new System.Drawing.Point(229, 142);
-            this.btnPreguntar.Name = "btnPreguntar";
-            this.btnPreguntar.Size = new System.Drawing.Size(187, 43);
-            this.btnPreguntar.TabIndex = 4;
-            this.btnPreguntar.Text = "ENVAR";
-            this.btnPreguntar.UseVisualStyleBackColor = true;
-            this.btnPreguntar.Click += new System.EventHandler(this.btnPreguntar_Click);
+            this.btnEnviar.Image = ((System.Drawing.Image)(resources.GetObject("btnEnviar.Image")));
+            this.btnEnviar.Location = new System.Drawing.Point(229, 142);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(187, 43);
+            this.btnEnviar.TabIndex = 4;
+            this.btnEnviar.Text = "ENVAR";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // txtPregunta
             // 
@@ -83,14 +83,16 @@
             this.txtPregunta.Size = new System.Drawing.Size(349, 26);
             this.txtPregunta.TabIndex = 3;
             // 
-            // richTextBox1
+            // txtRespuesta
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(30, 240);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(409, 146);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.txtRespuesta.Enabled = false;
+            this.txtRespuesta.Location = new System.Drawing.Point(7, 240);
+            this.txtRespuesta.Name = "txtRespuesta";
+            this.txtRespuesta.ReadOnly = true;
+            this.txtRespuesta.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txtRespuesta.Size = new System.Drawing.Size(468, 388);
+            this.txtRespuesta.TabIndex = 2;
+            this.txtRespuesta.Text = "";
             // 
             // label1
             // 
@@ -116,12 +118,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 425);
+            this.ClientSize = new System.Drawing.Size(582, 643);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmAsistenteGlamy";
             this.Text = "GLAMMY";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.FrmAsistenteGlamy_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -133,10 +136,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtRespuesta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox txtPregunta;
-        private System.Windows.Forms.Button btnPreguntar;
+        private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Button btnLimpiar;
     }
 }

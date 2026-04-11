@@ -13,33 +13,35 @@ namespace Practica_Final
 {
     public partial class FrmActualizarProducto : Form
     {
+        private DataGridView dgvProductos;
+
         public FrmActualizarProducto()
         {
             InitializeComponent();
-
+            dgvProductos = new DataGridView();
         }
 
 
-        // Cuando el usuario sale del cuadro sin escribir nada
+      
         private void txtBusqueda_Leave(object sender, EventArgs e)
         {
             if (txtBusqueda.Text == "")
             {
-                txtBusqueda.Text = "Ingrese ID o Nombre..."; // Ponemos la sugerencia otra vez
-                txtBusqueda.ForeColor = Color.Gray; // Lo ponemos gris de nuevo
+                txtBusqueda.Text = "Ingrese ID o Nombre..."; 
+                txtBusqueda.ForeColor = Color.Gray;
             }
         }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
-            // Si el cuadro está vacío, no busques nada y LIMPIA el nombre.
+     
             if (string.IsNullOrEmpty(txtBusqueda.Text))
             {
                 txtNombre.Text = "";
                 return;
             }
 
-            // Elimina el código inaccesible y usa la lista correcta
+     
             if (txtBusqueda.Text == "Ingrese ID o nombre...")
             {
                 txtBusqueda.Text = "";
@@ -66,42 +68,54 @@ namespace Practica_Final
         private void btnActualizar_Click(object sender, EventArgs e)
         {
 
+
+
             {
-                // Buscamos el producto por el ID que está en el cuadro txtID
-                var p = Datos.listaProductos.FirstOrDefault(x => x.Id.ToString() == txtID.Text);
-
-                if (p != null)
+                try
                 {
-                    // Actualizamos los datos en la lista
-                    p.Nombre = txtNombre.Text;
-                    p.Categoria = cmbCategoria.Text;
-                    p.Cantidad = (int)numCantidad.Value;
-                    p.PrecioPorUnidad = decimal.Parse(txtPrecio.Text);
-                    p.CantidadMinima = int.Parse(txtMinima.Text);
-                    p.Necesidad = cmbNecesidad.Text;
+                  
+                    if (string.IsNullOrWhiteSpace(txtPrecio.Text) || string.IsNullOrWhiteSpace(txtMinima.Text))
+                    {
+                        MessageBox.Show("Por favor, completa los campos de Precio y Cantidad.");
+                        return;
+                    }
 
-                    // Aquí puedes copiar tu lógica de ITBIS de 'Agregar' para que se recalcule
+                    double precio = Convert.ToDouble(txtPrecio.Text);
+                    int cantidad = Convert.ToInt32(txtMinima.Text);
+                    int cantidadMinima = Convert.ToInt32(txtMinima.Text);
 
-                    MessageBox.Show("¡Producto actualizado! Cierra esta ventana y dale a 'Mostrar' en la tabla.");
-                    this.Close();
+               
+                    double itbisCalculado = precio * 0.18;
+                    double precioFinalCalculado = precio + itbisCalculado;
+
+                    string nuevoEstado = (cantidad <= cantidadMinima) ? "Próximo a terminar" : "Suficiente";
+
+                  
+                    dgvProductos.DataSource = null;
+                    dgvProductos.DataSource = Datos.listaProductos;
+
+                    MessageBox.Show("¡Producto actualizado correctamente!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar: " + ex.Message);
                 }
             }
         }
 
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
-            // Buscamos el producto
             var p = Datos.listaProductos.FirstOrDefault(x => x.Id.ToString() == txtID.Text);
 
             if (p != null)
             {
-                // 1. Lo borramos de la lista
+          
                 Datos.listaProductos.Remove(p);
 
                 MessageBox.Show("Producto eliminado correctamente.");
 
-                // 2. IMPORTANTE: Antes de cerrar, 'limpiamos' el foco
+               
                 this.DialogResult = DialogResult.OK;
                 this.Close();
                 {
@@ -206,22 +220,127 @@ namespace Practica_Final
                 else txtEstado.Text = "Disponible";
             }
         }
+
+        private void btnActualizar_Click_1(object sender, EventArgs e)
+        {
+
+            {
+                try
+                {
+                    if (string.IsNullOrWhiteSpace(txtBusqueda.Text) || string.IsNullOrWhiteSpace(txtPrecio.Text))
+                    {
+                        MessageBox.Show("Por favor, completa el ID para buscar y el nuevo precio.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    
+                    int idABuscar = Convert.ToInt32(txtBusqueda.Text);
+                    var productoAActualizar = Datos.listaProductos.FirstOrDefault(p => p.Id == idABuscar);
+
+                    if (productoAActualizar == null)
+                    {
+                        MessageBox.Show("Producto no encontrado. Asegúrate de que el ID sea correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    
+                    string nombre = txtNombre.Text;
+                    string categoria = cmbCategoria.Text;
+                    string necesidad = cmbNecesidad.Text; 
+                    decimal precio;
+                    
+                    if (!decimal.TryParse(txtPrecio.Text, out precio))
+                    {
+                        MessageBox.Show("El precio ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    int cantidad = Convert.ToInt32(numCantidad.Value);
+                    int cantidadMinima = Convert.ToInt32(numCantidad.Value); 
+                   
+                    decimal itbisCalculado;
+                    if (necesidad == "Primera")
+                    {
+                        itbisCalculado = precio * 0.08m; // 8%
+                    }
+                    else if (necesidad == "Segunda")
+                    {
+                        itbisCalculado = precio * 0.14m; // 14%
+                    }
+                    else if (necesidad == "Tercera")
+                    {
+                        itbisCalculado = precio * 0.18m; // 18%
+                    }
+                    else
+                    {
+                  
+                        itbisCalculado = 0m;
+                    }
+
+          
+                    decimal precioFinalCalculado = precio + itbisCalculado;
+
+              
+                    string nuevoEstado;
+                    if (cantidad <= 0)
+                    {
+                        nuevoEstado = "Sin existencia";
+                    }
+                    else if (cantidad <= cantidadMinima)
+                    {
+                        nuevoEstado = "Próximo a terminar";
+                    }
+                    else
+                    {
+                        nuevoEstado = "Disponible";
+                    }
+
+        
+                    productoAActualizar.Nombre = nombre;
+                    productoAActualizar.Categoria = categoria;
+                    productoAActualizar.Necesidad = necesidad;
+                    productoAActualizar.Cantidad = cantidad;
+                    productoAActualizar.PrecioPorUnidad = precio;
+                    productoAActualizar.ITBIS = itbisCalculado;
+                    productoAActualizar.CantidadMinima = cantidadMinima;
+                    productoAActualizar.Estado = nuevoEstado; 
+                    productoAActualizar.PrecioFinal = precioFinalCalculado; 
+
+                   
+                    ActualizarTabla();
+
+                    MessageBox.Show("¡Producto '" + nombre + "' actualizado y recalculado correctamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar: Asegúrate de llenar todos los campos correctamente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void ActualizarTabla()
+        {
+         
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = Datos.listaProductos;
+        }
     }
 }
 
 
 
-        
-    
 
 
-        
-    
-        
-        
-    
 
-        
+
+
+
+
+
+
+
+
+
+
 
 
 

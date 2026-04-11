@@ -213,11 +213,12 @@
             // 
             // btnSobreNosotros
             // 
-            this.btnSobreNosotros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSobreNosotros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSobreNosotros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSobreNosotros.ForeColor = System.Drawing.Color.Black;
-            this.btnSobreNosotros.Location = new System.Drawing.Point(475, 380);
+            this.btnSobreNosotros.Location = new System.Drawing.Point(493, 378);
             this.btnSobreNosotros.Name = "btnSobreNosotros";
-            this.btnSobreNosotros.Size = new System.Drawing.Size(196, 34);
+            this.btnSobreNosotros.Size = new System.Drawing.Size(196, 45);
             this.btnSobreNosotros.TabIndex = 13;
             this.btnSobreNosotros.Text = "SOBRE NOSOTROS";
             this.btnSobreNosotros.UseVisualStyleBackColor = false;

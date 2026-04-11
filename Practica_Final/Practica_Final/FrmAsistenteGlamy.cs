@@ -17,64 +17,84 @@ namespace Practica_Final
             InitializeComponent();
         }
 
-        private void btnPreguntar_Click(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
+          
         {
-     
-        {
-            string pregunta = txtPregunta.Text.ToLower().Trim();
-             richTextBox1.Text = "";
-            bool esTemaDeAlmacen = false;
+            string pregunta = txtPregunta.Text.ToLower();
 
-            // 1. CONSULTA DE STOCK (Unidades, cantidades)
-            if (pregunta.Contains("stock") || pregunta.Contains("cuanto hay") || pregunta.Contains("quedan") || pregunta.Contains("unidades"))
+            if (pregunta.Contains("agregar"))
             {
-                int totalUnidades = Datos.listaProductos.Sum(p => p.Cantidad);
-            richTextBox1.Text = $"En el almacén tenemos un total de {totalUnidades} unidades disponibles entre todos los productos.";
-                esTemaDeAlmacen = true;
+                txtRespuesta.Text = "Para agregar un producto al almacén debes dirigirte al formulario de registro de productos.\r\n\r\n" +
+                "Luego, completa todos los campos requeridos como nombre, precio, cantidad y categoría.\r\n" +
+                "Asegúrate de que los datos sean correctos antes de guardar.\r\n\r\n" +
+                "Finalmente, presiona el botón de guardar para registrar el producto correctamente en el sistema.";
             }
-
-            // 2. CONSULTA DE VALOR (Dinero, costos)
-            else if (pregunta.Contains("precio") || pregunta.Contains("valor") || pregunta.Contains("dinero") || pregunta.Contains("costo"))
+            else if (pregunta.Contains("actualizar"))
             {
-                decimal totalDinero = Datos.listaProductos.Sum(p => p.PrecioFinal);
-              richTextBox1.Text = $"El valor monetario de todo lo que hay en el almacén ahora mismo es de RD$ {totalDinero:N2}.";
-                esTemaDeAlmacen = true;
+                txtRespuesta.Text = "Para actualizar un producto, primero debes buscarlo en la lista o mediante su ID.\r\n\r\n" +
+                "Una vez localizado, selecciona el producto y modifica los datos que necesites cambiar.\r\n" +
+                "Después, presiona el botón actualizar para guardar los cambios.\r\n\r\n" +
+                "El sistema reflejará automáticamente la información actualizada.";
             }
-
-            // 3. CONSULTA DE PRODUCTOS ESPECÍFICOS
-            else if (pregunta.Contains("producto") || pregunta.Contains("articulo") || pregunta.Contains("que tengo"))
+            else if (pregunta.Contains("eliminar"))
             {
-                int tipos = Datos.listaProductos.Count;
-               richTextBox1.Text = $"Actualmente manejamos {tipos} tipos de artículos diferentes en el registro del almacén.";
-                esTemaDeAlmacen = true;
+                txtRespuesta.Text = "Para eliminar un producto del sistema, debes seleccionarlo en la lista de productos.\r\n\r\n" +
+                "Luego, presiona el botón eliminar.\r\n" +
+                "Es posible que el sistema te pida confirmación antes de borrarlo.\r\n\r\n" +
+                "Ten en cuenta que esta acción no se puede deshacer.";
             }
-
-            // 4. CONSULTA DE ESTADO (Stock bajo)
-            else if (pregunta.Contains("bajo") || pregunta.Contains("faltan") || pregunta.Contains("agotado"))
+            else if (pregunta.Contains("buscar") || pregunta.Contains("id"))
             {
-                int bajo = Datos.listaProductos.Count(p => p.Cantidad <= 5);
-               richTextBox1.Text = $"Hay {bajo} productos que están por agotarse. Deberías pedir más mercancía para el almacén.";
-                esTemaDeAlmacen = true;
+                txtRespuesta.Text = "Para buscar un producto por ID, debes ingresar el código en el campo de búsqueda.\r\n\r\n" +
+                "Luego, presiona el botón buscar.\r\n" +
+                "El sistema mostrará automáticamente el producto si existe.\r\n\r\n" +
+                "Esto te permite localizar productos de forma rápida y precisa.";
             }
-
-            // --- EL FILTRO DE SEGURIDAD (Si pregunta otra cosa como "¿Cómo estás?") ---
-            if (!esTemaDeAlmacen)
+            else if (pregunta.Contains("itbis"))
             {
-              richTextBox1.Text = "Lo siento, no puedo responder eso. Solo puedo responder todo lo relacionado al almacén de GlamInventory.";
+                txtRespuesta.Text = "El ITBIS es un impuesto aplicado a los productos.\r\n\r\n" +
+                "El sistema calcula automáticamente el ITBIS dependiendo del porcentaje configurado (por ejemplo 18%).\r\n" +
+                "Este valor se suma al precio del producto para obtener el total.\r\n\r\n" +
+                "No necesitas calcularlo manualmente.";
             }
-
-            txtPregunta.Clear();
-            txtPregunta.Focus();
+            else
+            {
+                txtRespuesta.Text = "Solo puedo contestar preguntas relacionadas al almacén de Ashly Ramos ❤️\r\n\r\n" +
+                "Intenta hacer una pregunta sobre productos, registros, actualización o funcionamiento del sistema.";
+                txtPregunta.Clear();
+            }
         }
-    }
+
+
+
+
+
+
+
+
+        private void FrmAsistenteGlamy_Load(object sender, EventArgs e)
+        {
+
+            {
+                txtRespuesta.Text = "Hola, soy tu asistente virtual Glammy 💜\r\n\r\n" +
+                "Puedo ayudarte con preguntas como:\r\n" +
+                "- ¿Cómo agregar un producto?\r\n" +
+                "- ¿Cómo actualizar un producto?\r\n" +
+                "- ¿Cómo eliminar un producto?\r\n" +
+                "- ¿Cómo buscar un producto por ID?\r\n" +
+                "- ¿Cómo funciona el ITBIS?\r\n\r\n" +
+                "Escribe tu pregunta y presiona ENVIAR 😊";
+            }
+        }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-       
+           
         {
-            txtPregunta.Clear();    // Borra lo que el usuario escribió
-             richTextBox1.Text = ""; // Borra la respuesta de Glammy
-            txtPregunta.Focus();    // Pone el cursor listo para escribir de nuevo
+            txtPregunta.Clear();   
+            txtRespuesta.Clear();
+
+            txtPregunta.Focus();  
         }
     }
     }

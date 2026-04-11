@@ -84,10 +84,10 @@ namespace Practica_Final
 
                 if (respuesta == DialogResult.Yes)
                 {
-                    // 3. Obtener el ID de la fila seleccionada
+                   
                     int idSeleccionado = int.Parse(dataGridView1.CurrentRow.Cells["Id"].Value.ToString());
 
-                    // 4. Buscar el producto en la lista de Datos y eliminarlo
+                 
                     var producto = Datos.listaProductos.FirstOrDefault(p => p.Id == idSeleccionado);
 
                     if (producto != null)
@@ -95,7 +95,7 @@ namespace Practica_Final
                         Datos.listaProductos.Remove(producto);
                         MessageBox.Show("Producto eliminado correctamente.");
 
-                        // 5. REFRESCAR LA TABLA (Igual que cuando agregas)
+                    
                         dataGridView1.DataSource = null;
                         dataGridView1.DataSource = Datos.listaProductos;
                         {
@@ -110,19 +110,19 @@ namespace Practica_Final
             }
         }
         {
-            // 1. Verificar si hay una fila seleccionada
+            
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // 2. Preguntar al usuario para estar seguros (Buena práctica)
+               
                 DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este producto?",
                     "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (respuesta == DialogResult.Yes)
                 {
-                    // 3. Obtener el ID de la fila seleccionada
+                   
                     int idSeleccionado = int.Parse(dataGridView1.CurrentRow.Cells["Id"].Value.ToString());
 
-                    // 4. Buscar el producto en la lista de Datos y eliminarlo
+                  
                     var producto = Datos.listaProductos.FirstOrDefault(p => p.Id == idSeleccionado);
 
                     if (producto != null)
@@ -130,7 +130,7 @@ namespace Practica_Final
                         Datos.listaProductos.Remove(producto);
                         MessageBox.Show("Producto eliminado correctamente.");
 
-                        // 5. REFRESCAR LA TABLA (Igual que cuando agregas)
+                      
                         dataGridView1.DataSource = null;
                         dataGridView1.DataSource = Datos.listaProductos;
                     }

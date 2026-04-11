@@ -58,7 +58,6 @@ namespace Practica_Final
                 p.PrecioFinal = p.PrecioPorUnidad + p.ITBIS;
 
                 // ESTADO CALCULADO
-             int Cantidad;
             int.TryParse(txtCantidadMinima.Text, out min);
             if (p.Cantidad == 0) p.Estado = "Agotado";
             else if (p.Cantidad <= min) p.Estado = "Próximo a terminar";

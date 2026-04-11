@@ -26,19 +26,17 @@ namespace Practica_Final
         {
         
 
-            // 1. Forzamos el tamaño cuadrado AQUÍ para que no sea un rectángulo
+   
             btnExportar.Width = 200;
             btnExportar.Height = 200;
 
-            // 2. Quitamos bordes y ponemos el fondo transparente 
-            // para que solo se vea tu icono morado
+         
             btnExportar.FlatStyle = FlatStyle.Flat;
             btnExportar.FlatAppearance.BorderSize = 0;
             btnExportar.BackColor = Color.Transparent;
             btnExportar.Text = "";
 
-            // 3. EL TRUCO FINAL: El recorte circular "bola de nieve"
-            // Lo ponemos en el evento Paint para que se actualice siempre
+       
             btnExportar.Paint += (s, e) => {
                 System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
                 gp.AddEllipse(0, 0, btnExportar.Width, btnExportar.Height);
@@ -70,7 +68,7 @@ namespace Practica_Final
                 {
                     using (StreamWriter sw = new StreamWriter(guardarArchivo.FileName))
                     {
-                        // Encabezados
+                     
                         sw.WriteLine("ID;Nombre;Categoria;Cantidad;Precio;ITBIS;Estado;PrecioFinal");
                         foreach (var p in Datos.listaProductos)
                         {
@@ -91,14 +89,14 @@ namespace Practica_Final
         {
 
             {
-                // 1. Definimos el área circular
+
                 System.Drawing.Drawing2D.GraphicsPath formaCircular = new System.Drawing.Drawing2D.GraphicsPath();
                 formaCircular.AddEllipse(0, 0, btnExportar.Width, btnExportar.Height);
 
-                // 2. Aplicamos el recorte al botón
+    
                 btnExportar.Region = new Region(formaCircular);
 
-                // 3. (Opcional) Suavizar los bordes para que no se vea "pixelado"
+           
                 e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
                 this.BeginInvoke((MethodInvoker)delegate {
